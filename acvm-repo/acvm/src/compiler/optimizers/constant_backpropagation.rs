@@ -82,12 +82,7 @@ impl ConstantBackpropOptimizer {
         let mut known_witnesses = WitnessMap::new();
         for opcode in self.circuit.opcodes.iter().rev() {
             if let Opcode::AssertZero(expr) = opcode {
-                match ExpressionSolver::solve(&mut known_witnesses, expr) {
-                    Ok(()) | Err(OpcodeResolutionError::OpcodeNotSolvable(_)) => {
-                        // println!("failed");
-                    }
-                    Err(_) => todo!(),
-                }
+                let _ = ExpressionSolver::solve(&mut known_witnesses, expr);
             }
         }
 
