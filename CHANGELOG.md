@@ -1,5 +1,42 @@
 # Changelog
 
+## [0.23.0](https://github.com/noir-lang/noir/compare/v0.22.0...v0.23.0) (2024-01-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* Rename Arithmetic opcode to AssertZero ([#3840](https://github.com/noir-lang/noir/issues/3840))
+* remove circuit methods from noir_wasm ([#3869](https://github.com/noir-lang/noir/issues/3869))
+
+### Features
+
+* Add support for codegenning multiple functions which use the same structs in their interface ([#3868](https://github.com/noir-lang/noir/issues/3868)) ([1dcfcc5](https://github.com/noir-lang/noir/commit/1dcfcc5265f618685a783504b1d4be213e4cda2d))
+* Comparison for signed integers ([#3873](https://github.com/noir-lang/noir/issues/3873)) ([bcbd49b](https://github.com/noir-lang/noir/commit/bcbd49b8b44749e149f83c1240094fa2f0a19087))
+* Implement DAP protocol in Nargo ([#3627](https://github.com/noir-lang/noir/issues/3627)) ([13834d4](https://github.com/noir-lang/noir/commit/13834d43bd876909cb50494a41b42297f7e6375b))
+* **lsp:** Re-add code lens feature with improved performance ([#3829](https://github.com/noir-lang/noir/issues/3829)) ([8f5cd6c](https://github.com/noir-lang/noir/commit/8f5cd6c0b641b3970bf626e8910b2a4c7cc8c310))
+* Optimize logic gate ACIR-gen ([#3897](https://github.com/noir-lang/noir/issues/3897)) ([926460a](https://github.com/noir-lang/noir/commit/926460a0c70e21e2f4720148cf424e44ab9b0678))
+* Prefer `AcirContext`-native methods for performing logic operations ([#3898](https://github.com/noir-lang/noir/issues/3898)) ([0ec39b8](https://github.com/noir-lang/noir/commit/0ec39b8396084ed1e7f20609c8ad8a5844a86674))
+* Remove unnecessary predicate from `Lt` instruction ([#3922](https://github.com/noir-lang/noir/issues/3922)) ([a63433f](https://github.com/noir-lang/noir/commit/a63433fb8747722ec3cf2c6eb85d34e5b04bc15c))
+* Simplify multiplications by `0` or `1` in ACIR gen ([#3924](https://github.com/noir-lang/noir/issues/3924)) ([e58844d](https://github.com/noir-lang/noir/commit/e58844daf9f040626a3a7595f8c4f831e48a4037))
+
+
+### Bug Fixes
+
+* Acir gen doesn't panic on unsupported BB function ([#3866](https://github.com/noir-lang/noir/issues/3866)) ([34fd978](https://github.com/noir-lang/noir/commit/34fd978d206789a9e9f5167bfd690a34386834d0))
+* Allow abi encoding arrays of structs from JS ([#3867](https://github.com/noir-lang/noir/issues/3867)) ([9b713f8](https://github.com/noir-lang/noir/commit/9b713f8cf599df262a12ec1098136c50b2b46766))
+* Allow abi encoding tuples from JS ([#3894](https://github.com/noir-lang/noir/issues/3894)) ([f7fa181](https://github.com/noir-lang/noir/commit/f7fa1811ad2591020c914976f26e2f11a91cd177))
+* Allow lsp to run inside of a docker container ([#3876](https://github.com/noir-lang/noir/issues/3876)) ([2529977](https://github.com/noir-lang/noir/commit/2529977acd684219f57ef086415557cc07af043b))
+* Bit-shifts for signed integers ([#3890](https://github.com/noir-lang/noir/issues/3890)) ([6ddd98a](https://github.com/noir-lang/noir/commit/6ddd98ab7d3fefde491cf12b785f76bf0585609e))
+* Don't fail if no tests and the user didn't provide a pattern ([#3864](https://github.com/noir-lang/noir/issues/3864)) ([decbd0f](https://github.com/noir-lang/noir/commit/decbd0f0c019844cd2b235e7804d2f6ba7b23897))
+* Fixing dark mode background on the CTA button ([#3882](https://github.com/noir-lang/noir/issues/3882)) ([57eae42](https://github.com/noir-lang/noir/commit/57eae42080d6a928e8010c6bc77489964a5777ef))
+* Prevent `Instruction::Constrain`s for non-primitive types ([#3916](https://github.com/noir-lang/noir/issues/3916)) ([467948f](https://github.com/noir-lang/noir/commit/467948f9ee9ae65b4e2badaa1d15835fced3e835))
+
+
+### Miscellaneous Chores
+
+* Remove circuit methods from noir_wasm ([#3869](https://github.com/noir-lang/noir/issues/3869)) ([12d884e](https://github.com/noir-lang/noir/commit/12d884e2b74efab7257626d8878ea1a7455ecf85))
+* Rename Arithmetic opcode to AssertZero ([#3840](https://github.com/noir-lang/noir/issues/3840)) ([836f171](https://github.com/noir-lang/noir/commit/836f17145c2901060706294461c2d282dd121b3e))
+
 ## [0.22.0](https://github.com/noir-lang/noir/compare/v0.21.0...v0.22.0) (2023-12-18)
 
 
