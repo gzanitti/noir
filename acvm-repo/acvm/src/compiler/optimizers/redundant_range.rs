@@ -259,4 +259,17 @@ mod tests {
         let (optimized_circuit, _) = optimizer.replace_redundant_ranges(acir_opcode_positions);
         assert_eq!(optimized_circuit.opcodes.len(), 5);
     }
+
+    #[test]
+    fn constant_implied_ranges() {
+        // The optimizer should use knowledge about constant witness assignments to remove range opcodes.
+        let mut circuit = test_circuit(vec![(Witness(1), 16)]);
+
+        circuit.opcodes.push(Opcode::AssertZero(Witness(1).into()));
+        let acir_opcode_positions = circuit.opcodes.iter().enumerate().map(|(i, _)| i).collect();
+        let optimizer = RangeOptimizer::new(circuit);
+        let (optimized_circuit, _) = optimizer.replace_redundant_ranges(acir_opcode_positions);
+        assert_eq!(optimized_circuit.opcodes.len(), 1);
+        assert_eq!(optimized_circuit.opcodes[0], Opcode::AssertZero(Witness(1).into()));
+    }
 }
