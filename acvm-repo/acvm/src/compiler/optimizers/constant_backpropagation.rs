@@ -4,7 +4,7 @@ use crate::{
     compiler::optimizers::GeneralOptimizer,
     pwg::{
         arithmetic::ExpressionSolver, directives::solve_directives, BrilligSolver,
-        BrilligSolverStatus, OpcodeResolutionError,
+        BrilligSolverStatus,
     },
 };
 use acir::{
