@@ -62,7 +62,7 @@ impl<'b, B: BlackBoxFunctionSolver> BrilligSolver<'b, B> {
 
     /// Constructs a solver for a Brillig block given the bytecode and initial
     /// witness.
-    pub(super) fn new(
+    pub fn new(
         initial_witness: &WitnessMap,
         brillig: &'b Brillig,
         bb_solver: &'b B,
@@ -128,7 +128,7 @@ impl<'b, B: BlackBoxFunctionSolver> BrilligSolver<'b, B> {
         self.vm.write_memory_at(ptr, value);
     }
 
-    pub(super) fn solve(&mut self) -> Result<BrilligSolverStatus, OpcodeResolutionError> {
+    pub(crate) fn solve(&mut self) -> Result<BrilligSolverStatus, OpcodeResolutionError> {
         let status = self.vm.process_opcodes();
         self.handle_vm_status(status)
     }
@@ -171,7 +171,7 @@ impl<'b, B: BlackBoxFunctionSolver> BrilligSolver<'b, B> {
         }
     }
 
-    pub(super) fn finalize(
+    pub(crate) fn finalize(
         self,
         witness: &mut WitnessMap,
         brillig: &Brillig,

@@ -91,6 +91,7 @@ impl MemoryOpSolver {
             //
             // This is the value that we want to read into; i.e. copy from the memory block
             // into this value.
+
             let value_read_witness = value.to_witness().expect(
                 "Memory must be read into a specified witness index, encountered an Expression",
             );
